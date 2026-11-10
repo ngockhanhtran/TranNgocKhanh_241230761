@@ -1,0 +1,47 @@
+@model TranNgocKhanh_241230761.Models.HangHoa
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Tran Ngoc Khanh</h1>
+
+<h4>Them moi hang hoa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" style="color:red"></div>
+
+            <div class="form-group">
+                <label asp-for="MaLoai" class="control-label"></label><br />
+                <select asp-for="MaLoai" class="form-control" asp-items="ViewBag.MaLoai"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TenHang" class="control-label"></label> <br/>
+                <input asp-for="TenHang" class="form-control" />
+                <span asp-validation-for="TenHang" style="color:red"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Gia" class="control-label"></label><br />
+                <input asp-for="Gia" class="form-control" />
+                <span asp-validation-for="Gia" style="color:red"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Anh" class="control-label"></label><br />
+                <input asp-for="Anh" class="form-control" />
+                <span asp-validation-for="Anh" style="color:red"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
